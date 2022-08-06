@@ -9,7 +9,7 @@ class Solution {
     function romanToInt($s) {
         $total = 0;
         $translations = [
-            "I"=> 1,g
+            "I"=> 1,
             "V"=> 5,
             "X"=> 10,
             "L"=> 50,
