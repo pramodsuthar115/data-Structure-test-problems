@@ -25,7 +25,6 @@ function searchInsert($nums, $target){
     $end = sizeof($nums) - 1;
     $location = -1;
     
-    
     while ($start <= $end) {
         $mid = ceil(($start + $end)/2);
         if ($nums[$mid] == $target) {
@@ -41,7 +40,7 @@ function searchInsert($nums, $target){
     
 }
 
-// function that use 23 ms to execute;
+// function that takes min 23 ms to execute;
 function searchInputBackup($nums, $target){
     $start = 0;
         $end = sizeof($nums) - 1;
