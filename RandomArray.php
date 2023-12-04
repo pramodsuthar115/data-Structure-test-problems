@@ -1,5 +1,5 @@
 <?php
-function createArray($length){
+function createArray($length, $isSorted=false){
     $Array = [];
     $max = "9";
     $min = "0";
@@ -10,6 +10,9 @@ function createArray($length){
     
     for($i=0;$i<$length;$i++){
         $Array[] = rand($min,$max);
+    }
+    if($isSorted) {
+        sort($Array);
     }
     return $Array;
 }

@@ -24,8 +24,18 @@ class Lists{
         $this->obj->push("50");
         $this->obj->push("100",1);
         $this->obj->push("100",1);
+        $this->obj->push("100",1);
+        $this->obj->push("100",1);
+        $this->obj->push("100",1);
+        $this->obj->push("100",1);
         $this->obj->push("150",2);
         $this->obj->push("200",3);
+        $this->obj->push("200",3);
+        $this->obj->push("200",3);
+        $this->obj->push("200",3);
+        $this->obj->push("200",3);
+        $this->obj->push("240",3);
+        $this->obj->push("250",4);
         $this->obj->push("250",4);
         $this->obj->push("300",5);
         $this->obj->push("350",6);
@@ -44,37 +54,33 @@ class Lists{
     }
 
     public function deleteDuplicate(){
-        $fast = $this->obj->head;
-        $slow = $this->obj->head;
-            
-        if($fast == null)
-            return;
- 
-        while ($fast->next != null){
-            $slow = $slow->next;
-            $fast = $fast->next;
+
+        $current = $this->obj->head;
+        while ($current){
+            if($current->next && $current->data == $current->next->data){
+                $pivot = $current;
+                $newCurrent = $current->next;
+                while($newCurrent && $pivot->data === $newCurrent->data){
+                    $pivot->next = $newCurrent->next;
+                    $newCurrent = $newCurrent->next;
+                }
+
+                // remove first node also that has same node value
+                // if($previous) $previous->next = $pivot->next;
+                // else $this->obj->head = $pivot->next;
+
+                $current = $pivot->next;
+
+            } else {
+                // $previous = $current;
+                $current = $current->next;
+            }   
         }
-        # delete the node
-        $slow->next = $slow->next->next;
-        print_r($this->obj->head); echo "</br>";
         return $this->obj->head;
-
-        $head = $node = $this->obj->head;
-        $i = $this->objLength - $n;
-        // $node = new LinkedList();
-        while($i>0){
-            print_r($i);
-            $node = $head->next;
-            $i--;
-        }
-        print_r($node);   echo "</br>";
-        $node->next = $head->next->next;
-        print_r($this->obj->head); echo "</br>";
-
     }
 
 }
 
 
 $list = new Lists();
-$list->removeNode(2);
+// $list->removeNode(2);

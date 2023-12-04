@@ -43,7 +43,7 @@ $arr = array_fill(0, $n, 0);
 // Print all binary strings
 generateAllBinaryStrings($n, $arr, 0);
 
-// This code is contributed by Ryuga
+
 ?>
 
 <!-- <input type="number" min="1" name="">

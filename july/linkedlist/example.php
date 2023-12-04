@@ -4,10 +4,10 @@ class node{
     public $item;
     public $next;
 
-    // public function __construct($item){
-    //     $this->item = $item;
-    //     $this->next = NULL;
-    // }
+    public function __construct($item){
+        $this->item = $item;
+        $this->next = NULL;
+    }
 }
 
 class LinkedList{
